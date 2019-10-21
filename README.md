@@ -1,3 +1,5 @@
+# Use XDebug on a Devilbox with PhpStorm and Postman 
+
 ## Host OS
 
 Tested on:
@@ -67,7 +69,9 @@ docker-compose up -d
 docker-compose up httpd php mysql -d
 ```
 
-**If you get errors, check [troubleshooting DNS related startup errors](systemd-resolved.md).**
+### "$ ERROR: for devilbox_bind_1 Cannot start service bind: (&hellip;) address already in use"
+
+This error can occur when using ``docker-compose up -d`` with the bind container. The docs give [the solution here](https://devilbox.readthedocs.io/en/latest/howto/dns/add-custom-dns-server-on-linux.html) - check `/etc/resolv.conf` to get your network manager.
 
 ## PhpStorm
 
