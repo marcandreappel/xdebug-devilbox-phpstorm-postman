@@ -4,10 +4,11 @@ Tested on:
  - openSUSE 15.1 Leap
  - Fedora 30
  - Ubuntu 18.04.3 LTS
- - Pop!\_OS 19.10
+ - Pop!\_OS 19.10 (might apply to most recent Ubuntu derivates)
+ - Windows 10 Pro
 
 Check before setup:
- - Accept in the firewall the port 9000 TCP
+ - Accept in the firewall settings the port 9000 TCP
 
 ## Docker 
 (&hellip;_setup without sudo_&hellip;)
@@ -66,9 +67,7 @@ docker-compose up -d
 docker-compose up httpd php mysql -d
 ```
 
-### "$ ERROR: for devilbox_bind_1 Cannot start service bind: (&hellip;) address already in use"
-
-This error can occur when using ``docker-compose up -d`` with the bind container. The docs give [the solution here](https://devilbox.readthedocs.io/en/latest/howto/dns/add-custom-dns-server-on-linux.html) - check `/etc/resolv.conf` to get your network manager.
+**If you get errors, check [troubleshooting DNS related startup errors](systemd-resolved.md).**
 
 ## PhpStorm
 
