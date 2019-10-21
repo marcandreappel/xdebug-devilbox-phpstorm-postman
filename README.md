@@ -13,7 +13,7 @@ Check before setup:
  - Accept in the firewall settings the port 9000 TCP
 
 ## Docker 
-(&hellip;_setup without sudo_&hellip;)
+(&hellip;_setup without the need to use sudo_&hellip;)
 
 Check existance of the _docker_ group
 ```bash
@@ -33,7 +33,7 @@ docker run hello-world
 ```
 
 ## Devilbox
-(&hellip;_for multisite setup see the [Devilbox documentation](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#host-path-httpd-datadir)_&hellip;)
+(&hellip;_for a multisite setup read this part of the [Devilbox documentation](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#host-path-httpd-datadir)_&hellip;)
 
 ```bash
 cd /_devilbox_install_dir_/cfg/php-ini-X.X/

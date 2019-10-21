@@ -1,6 +1,8 @@
-# Troubleshooting systemd-resolved service and Devilbox auto-dns
+[<< Return to the tutorial](README.md)
 
-## "$ ERROR: for devilbox_bind_1 Cannot start service bind: (&hellip;) address already in use"
+# Troubleshooting Auto DNS and systemd-resolved
+
+## ERROR: for devilbox_bind_1 Cannot start service bind: (&hellip;) address already in use
 
 This error might occur with the `cytopia/bind` container when using ``docker-compose up -d``.
 
