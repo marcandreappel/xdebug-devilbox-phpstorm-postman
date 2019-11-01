@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+cd $HOME/.local/share/devilbox
+
+docker-compose stop
+docker-compose rm -f
+
+docker-compose up httpd php mysql -d 
