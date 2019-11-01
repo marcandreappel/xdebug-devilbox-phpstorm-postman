@@ -15,6 +15,8 @@ Check before setup:
 ## Docker 
 (&hellip;_setup without the need to use sudo_&hellip;)
 
+Install docker via your package manager (Ubuntu 19.10 has the `docker.io` package).
+
 Check existance of the _docker_ group
 ```bash
 sudo groupadd docker
