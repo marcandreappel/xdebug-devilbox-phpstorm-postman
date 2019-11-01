@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+cd $HOME/.local/share/devilbox
+
+docker-compose exec --user devilbox php bash -l
