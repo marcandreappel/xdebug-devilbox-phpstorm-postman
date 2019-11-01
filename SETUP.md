@@ -47,7 +47,7 @@ Add your desired plugins here, too (eg. `npm`, `flutter`, etc).
 
 ## Docker
 
-As of writing there's no official package from Docker available and the docker.io package is to be used.
+As of writing there's no official package from Docker available (for Ubuntu 19.10) and the docker.io package is advised.
 
 ```sh
 sudo apt install docker.io docker-compose
