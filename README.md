@@ -13,6 +13,7 @@ Check before setup:
  - Accept in the firewall settings the port 9000 TCP
 
 Follow the steps in the [setup tutorial](SETUP.md) (optional).
+
 ## Docker 
 
 Make sure to follow [the Docker setup step](SETUP.md#docker) in the setup tutorial.
@@ -20,12 +21,14 @@ Make sure to follow [the Docker setup step](SETUP.md#docker) in the setup tutori
 ## Devilbox
 (&hellip;_for a multisite setup read this part of the [Devilbox documentation](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#host-path-httpd-datadir)_&hellip;)
 
-```bash
+```sh
 cd /_devilbox_install_dir_/cfg/php-ini-X.X/
 cp devilbox-php.ini-xdebug xdebug.ini
 nano xdebug.ini
 ```
+
 Change these settings:
+
 ```ini
 xdebug.default_enable  = 1
 xdebug.profiler_enable = 1
@@ -39,10 +42,12 @@ xdebug.remote_connect_back = 1
 xdebug.idekey     = PHPSTORM
 xdebug.remote_log = /var/log/php/xdebug.log
 ```
+
 See the [example .ini file](cfg-examples/php7.3-xdebug.ini).
+
 Save and restart DevilBox:
 
-```bash
+```sh
 cd /_devilbox_install_dir_
 docker-compose stop
 docker-compose rm -f
@@ -51,7 +56,7 @@ docker-compose up -d
 
 &hellip; or when not everything is necessary:
 
-```bash
+```sh
 docker-compose up httpd php mysql -d
 ```
 
