@@ -39,6 +39,7 @@ xdebug.remote_connect_back = 1
 xdebug.idekey     = PHPSTORM
 xdebug.remote_log = /var/log/php/xdebug.log
 ```
+See the [example .ini file](cfg-examples/php7.3-xdebug.ini).
 Save and restart DevilBox:
 
 ```bash
