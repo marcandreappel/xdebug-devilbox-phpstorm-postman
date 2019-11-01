@@ -12,27 +12,10 @@ Tested on:
 Check before setup:
  - Accept in the firewall settings the port 9000 TCP
 
+Follow the steps in the [setup tutorial](SETUP.md) (optional).
 ## Docker 
-(&hellip;_setup without the need to use sudo_&hellip;)
 
-Install docker via your package manager (Ubuntu 19.10 has the `docker.io` package).
-
-Check existance of the _docker_ group
-```bash
-sudo groupadd docker
-```
-
-Add the current user to the _docker_ group
-```bash
-sudo gpasswd -a $USER docker
-```
-
-_Log out end log to again to accept the changes!_
-
-Test the permissions
-```bash
-docker run hello-world
-```
+Make sure to follow [the Docker setup step](SETUP.md#docker) in the setup tutorial.
 
 ## Devilbox
 (&hellip;_for a multisite setup read this part of the [Devilbox documentation](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#host-path-httpd-datadir)_&hellip;)
