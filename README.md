@@ -45,7 +45,7 @@ xdebug.remote_log = /var/log/php/xdebug.log
 
 See the [example .ini file](cfg-examples/php7.3-xdebug.ini).
 
-Save and restart DevilBox:
+Save and restart DevilBox (or use the [handy startup script](/example-files/dbox)):
 
 ```sh
 cd /_devilbox_install_dir_
