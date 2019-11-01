@@ -8,6 +8,8 @@ This error might occur with the `cytopia/bind` container when using ``docker-com
 
 ### Ubuntu & derivates
 
+_The following was tested on 19.10_
+
  - Delete the stub-file first: `/etc/resolve.conf`
  - Symlink the systemd-resolved file: `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
  - Edit the systemd-resolved configuration `sudo nano /etc/systemd/resolved.conf` by adding `DNS=127.0.0.1 8.8.8.8` beneath **[Resolve]**
