@@ -8,14 +8,38 @@ This error might occur with the `cytopia/bind` container when using ``docker-com
 
 ### Ubuntu & derivates
 
-_The following was tested on 19.10_
+_The following was tested on Ubuntu 19.10_
 
- - Delete the stub-file first: `/etc/resolve.conf`
- - Symlink the systemd-resolved file: `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
- - Edit the systemd-resolved configuration `sudo nano /etc/systemd/resolved.conf` by adding `DNS=127.0.0.1 8.8.8.8` beneath **[Resolve]**
- - Restart systemd-resolved `sudo systemctl restartsystemd-resolved.service` to actualize the configuration
- - Add somewhere the [dbox.sh](https://gist.github.com/marcandreappel/a51f5fcdbe437d9cad0e4fee05e798d0) script and set it excutable `chmod u+x dbox.sh`
+ Delete the systemd-resolved stub-file first: 
+ 
+ ```sh
+ sudo rm /etc/resolve.conf
+ ```
+ 
+ Symlink the systemd-resolved file: 
+ 
+ ```sh
+ sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+ ```
+ 
+ Edit the systemd-resolved configuration:
+ ```sh
+ sudo nano /etc/systemd/resolved.conf
+ ```
+ Add the following into it:
+ 
+ ```conf
+ [Resolve]
+ DNS=127.0.0.1 8.8.8.8
+ ```
+ 
+ Restart systemd-resolved to validate the configuration:
 
-### Others
+ ```sh
+ sudo systemctl restartsystemd-resolved.service
+ ```
+ Save somewhere the [dbox tool](example-files/dbox), change the path to your devilbox installation and set it excutable `chmod u+x dbox.sh`
+
+### Other systems
 
 The docs might give [the solution here](https://devilbox.readthedocs.io/en/latest/howto/dns/add-custom-dns-server-on-linux.html) (check `/etc/resolv.conf` to get your running network manager / DNS resolver).
