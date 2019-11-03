@@ -10,35 +10,38 @@ This error might occur with the `cytopia/bind` container when using ``docker-com
 
 _The following was tested on Ubuntu 19.10_
 
- Delete the systemd-resolved stub-file first: 
- 
- ```sh
- sudo rm /etc/resolve.conf
- ```
- 
- Symlink the systemd-resolved file: 
- 
- ```sh
- sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
- ```
- 
- Edit the systemd-resolved configuration:
- ```sh
- sudo nano /etc/systemd/resolved.conf
- ```
- Add the following into it:
- 
- ```conf
- [Resolve]
- DNS=127.0.0.1 8.8.8.8
- ```
- 
- Restart systemd-resolved to validate the configuration:
+Delete the systemd-resolved stub-file first: 
 
- ```sh
- sudo systemctl restartsystemd-resolved.service
- ```
- Save somewhere the [dbox tool](example-files/dbox), change the path to your devilbox installation and set it excutable `chmod u+x dbox.sh`
+```sh
+sudo rm /etc/resolve.conf
+```
+
+Symlink the systemd-resolved file: 
+
+```sh
+sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+```
+
+Edit the systemd-resolved configuration:
+```sh
+sudo nano /etc/systemd/resolved.conf
+```
+
+Change the following in it:
+
+```conf
+[Resolve]
+DNS=127.0.0.1 8.8.8.8
+FallbackDNS=1.1.1.1 8.8.4.4
+```
+
+Restart systemd-resolved to validate the configuration:
+
+```sh
+sudo systemctl restart systemd-resolved.service
+```
+
+Save somewhere the [dbox tool](example-files/dbox), change the path to your devilbox installation and set it excutable `chmod u+x dbox.sh`; else you'll have to manually stop `systemd-resolved`, start devilbox and start `systemd-resolved` again. 
 
 ### Other systems
 
